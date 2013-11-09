@@ -1,10 +1,17 @@
-drupal-spin-up
+Drupal Spin-up
 ==============
 
-Spin up function for Drupal, to be inserted into your zshrc or bashrc file.
+Spin up function for Drupal, to be inserted into your zshrc or bashrc or bash_profile.
+(Not tested with standard bash).
+
+# Config
+
+Replace USER with the name of your home folder.
+Replace PASS with the password you want to use on all new sites.
+
+# Requirements
+
 Depends on the csbase2.make file. This file must exist in ~/Sites
 
-This script function must be customized by replacing USER with your user account,
-and PASS with the password you'd like to use for your new site.
-
-Also, customize the path to your virtual hosts file.
+# Assumptions
+Your virtual hosts file is at /private/etc/apache2/extra/httpd-vhosts.conf
