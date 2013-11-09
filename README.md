@@ -15,6 +15,13 @@ Spin up function for Drupal, to be inserted into your zshrc or bashrc or bash_pr
 7. Copy your modified spinup function into your zshrc or bashrc file.
 8. Restart your terminal.
 
+### Run
+
+1. spinup "sitename"
+
+This gives you sitename.dev, installed at ~/Sites/sitename
+
+
 ### Assumptions
 
 1. You have access to csbase2.make
