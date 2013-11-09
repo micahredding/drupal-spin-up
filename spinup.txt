@@ -1,0 +1,42 @@
+function spinup; {
+  # drush make
+  cd ~/Sites
+  drush make csbase2.make $*
+
+  # drush site install
+  cd $*
+  drush si d7_csbase_profile --db-url=mysql://root:root@localhost/$* --account-name=admin --account-pass=PASS --account-mail=admin@centresource.com -y
+
+  # theme
+  drush mothership "Mothership subtheme" $* --site-name=all
+  cd sites/all/themes/$*
+  rm -rf css
+  rm -rf js
+  git clone git@github.com:micahredding/assets.git
+  cd assets
+  rm -rf .git
+  rm -rf .gitignore
+  cd scss
+  bourbon install
+  neat install
+  cd ../..
+  cd ../../../..
+
+  # ehosts
+  sudo -v
+  sudo chmod 777 /etc/hosts
+  sudo echo "     " >> /etc/hosts
+  sudo echo "127.0.0.1 $*.dev " >> /etc/hosts
+  sudo chmod 644 /etc/hosts
+
+  # vhosts
+  sudo chmod 777 /private/etc/apache2/extra/httpd-vhosts.conf
+  sudo echo "     "                                 >> /private/etc/apache2/extra/httpd-vhosts.conf
+  sudo echo "<VirtualHost *:80>"                    >> /private/etc/apache2/extra/httpd-vhosts.conf
+  sudo echo "DocumentRoot '/Users/USER/Sites/$*' "  >> /private/etc/apache2/extra/httpd-vhosts.conf
+  sudo echo "ServerName $*.dev"                     >> /private/etc/apache2/extra/httpd-vhosts.conf
+  sudo echo "</VirtualHost>"                        >> /private/etc/apache2/extra/httpd-vhosts.conf
+  sudo chmod 644 /private/etc/apache2/extra/httpd-vhosts.conf
+
+  sudo apachectl restart
+}
