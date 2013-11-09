@@ -7,12 +7,12 @@ Spin up function for Drupal, to be inserted into your zshrc or bashrc or bash_pr
 ### Config
 
 1. Copy the csbase2.make file to your ~/Sites folder.
-2. Replace USER with the name of your home folder.
+2. Copy spinup function from spinup.txt into your zshrc or bashrc file.
+3. Replace USER with the name of your home folder.
 3. Replace PASS with the password you want to use on all new sites.
 4. Replace MAIL with the email address of your root (administrator) account.
 5. Double-check that your virtual hosts file is at /private/etc/apache2/extra/httpd-vhosts.conf
 6. If not, alter the code accordingly.
-7. Copy your modified spinup function into your zshrc or bashrc file.
 8. Restart your terminal.
 
 ### Run
