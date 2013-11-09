@@ -5,7 +5,7 @@ function spinup; {
 
   # drush site install
   cd $*
-  drush si d7_csbase_profile --db-url=mysql://root:root@localhost/$* --account-name=admin --account-pass=PASS --account-mail=admin@centresource.com -y
+  drush si d7_csbase_profile --db-url=mysql://root:root@localhost/$* --account-name=admin --account-pass=PASS --account-mail=MAIL -y
 
   # theme
   drush mothership "Mothership subtheme" $* --site-name=all
