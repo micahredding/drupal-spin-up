@@ -1,4 +1,4 @@
-function spinup; {
+function spinup {
   # drush make
   cd ~/Sites
   drush make csbase2.make $*
@@ -20,6 +20,17 @@ function spinup; {
   bourbon install
   neat install
   cd ../..
+  mkdir templates
+  mv page.tpl.php ./templates/
+  mv node.tpl.php ./templates/
+  cp ../../../../profiles/d7_csbase_profile/themes/mothership/mothership/templates/html.tpl.php ./templates
+  rm apple-startup.png
+  rm apple-touch-icon-114x114.png
+  rm apple-touch-icon-144x144\ 2.png
+  rm apple-touch-icon-72x72.png
+  rm apple-touch-icon.png
+  rm favicon.ico
+  rm logo.png  
   cd ../../../..
 
   # ehosts
