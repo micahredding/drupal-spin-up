@@ -2,7 +2,6 @@ Drupal Spin-up
 ==============
 
 Spin up function for Drupal, to be inserted into your zshrc or bashrc or bash_profile.
-(Not tested with standard bash).
 
 ### Config
 
