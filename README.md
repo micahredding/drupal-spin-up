@@ -28,4 +28,4 @@ This gives you sitename.dev, installed at ~/Sites/sitename
 1. You have access to csbase2.make
 2. Your virtual hosts file is at /private/etc/apache2/extra/httpd-vhosts.conf
 3. Your mysql username is "root" and the password is "root"
-3. You are installing sites at ~/Sites
+4. You are installing sites at ~/Sites
