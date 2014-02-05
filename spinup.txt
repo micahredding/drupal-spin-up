@@ -30,8 +30,9 @@ function spinup {
   rm apple-touch-icon-72x72.png
   rm apple-touch-icon.png
   rm favicon.ico
-  rm logo.png  
+  rm logo.png
   cd ../../../..
+  drush fr d7_base_feature -y
 
   # ehosts
   sudo -v
